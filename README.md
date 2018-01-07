@@ -25,7 +25,7 @@ to run application:
     `my-shell:>add USD 13` 
 * __init__: initialize repository from given file 
      (can be set when application starts as console parameter or here as optional parametr)   
-     `my-shell:>init` (when passed file from command line) 
+     `my-shell:>init` (when passed file from command line)  
      `my-shell:>init /Users/jirisobotik/Work/payment-tracker/InitFile.txt`  
 * __sum__: summarize all payments grouped by currency   
       `my-shell:>sum`
