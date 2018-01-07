@@ -21,15 +21,15 @@ to run application:
  
  ## possible operations
  
-* __add__: add new payment record
+* __add__: add new payment record 
     `my-shell:>add USD 13` 
 * __init__: initialize repository from given file 
-     (can be set when application starts as console parameter or here as optional parametr)
-     `my-shell:>init` (when passed file from command line)
+     (can be set when application starts as console parameter or here as optional parametr) 
+     `my-shell:>init` (when passed file from command line) 
      `my-shell:>init /Users/jirisobotik/Work/payment-tracker/InitFile.txt`
-* __sum__: summarize all payments grouped by currency
+* __sum__: summarize all payments grouped by currency 
       `my-shell:>sum`
-* __supported-currencies__: print all supported currencies
+* __supported-currencies__: print all supported currencies 
       `my-shell:>supported-currencies`
 
 
