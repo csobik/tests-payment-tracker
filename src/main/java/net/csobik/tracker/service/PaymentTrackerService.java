@@ -3,6 +3,8 @@ package net.csobik.tracker.service;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,21 +62,16 @@ public class PaymentTrackerService {
    * Simply print sum of all payments aggregated by currency
    */
   public void printSumPayments() {
-    final StringBuffer sb = new StringBuffer();
-    for (Currency currency : Currency.values()) {
-      Money sum = getCurrencySum(currency);
-      if (sum != null) {
-        sb.append(sum.getCurrency())
-            .append(" ")
-            .append(sum.getAmount())
-            .append("\n");
-      }
-    }
+      final String sb = Arrays.stream(Currency.values())
+              .map(this::getCurrencySum)
+              .filter(Objects::nonNull)
+              .map(sum -> sum.getCurrency() + " " + sum.getAmount() + "\n")
+              .collect(Collectors.joining());
 
-    System.out.println();
+      System.out.println();
     System.out.println("**********************");
     System.out.println(String.format("Summarize time: %s", LocalDateTime.now()));
-    System.out.println(sb.toString());
+    System.out.println(sb);
     System.out.println("**********************");
     System.out.println();
   }

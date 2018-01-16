@@ -58,5 +58,4 @@ public class MyCommands {
     }
     initService.initialize(this.initFile);
   }
-
 }

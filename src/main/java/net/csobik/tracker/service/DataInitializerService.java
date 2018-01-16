@@ -46,15 +46,14 @@ public class DataInitializerService {
     try (InputStream stream = new FileInputStream(initialFile)) {
       BufferedReader br = new BufferedReader(new InputStreamReader(stream));
 
-      String line;
-      while ((line = br.readLine()) != null) {
+      // else inform user about wrong data
+      br.lines().forEach(line -> {
         System.out.println(line);
         String[] splitted = line.split(" ");
         if (splitted.length == 2) {
           paymentTrackerService.savePayment(splitted[0], splitted[1]);
         }
-        // else inform user about wrong data
-      }
+      });
       br.close();
 
     } catch (IOException e) {
