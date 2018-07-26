@@ -1,5 +1,12 @@
 # tests-payment-tracker
 
+Program for testing purposes that keeps a record of payments. Each payment includes a currency and an amount. Data
+are kept only in memory.
+
+The program outputs a list of all the currency and amounts to the console once per minute. The input can
+be typed into the command line with possibility to be automated in the future, and optionally also can be loaded from
+a file when starting up.
+
 to run application:
 ```bash
  mvn spring-boot:run
